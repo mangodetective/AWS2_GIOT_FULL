@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+npm-debug.log*
+.aws-sam/
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
