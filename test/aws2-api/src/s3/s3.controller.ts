@@ -58,7 +58,7 @@ export class S3Controller {
       const lastIndex = data.length - 1;
       const lastData = data[lastIndex];
 
-      res.setHeader('Cache-Control', 'public, max-age=60');
+      res.setHeader('Cache-Control', 'public, max-age=29');
       return {
         filename,
         data: lastData,
@@ -66,7 +66,7 @@ export class S3Controller {
     }
 
     if (typeof data === 'object' && data !== null && !Array.isArray(data)) {
-      res.setHeader('Cache-Control', 'public, max-age=60');
+      res.setHeader('Cache-Control', 'public, max-age=29');
       // JSON 파일에 이미 filename, data 구조가 있는 경우 그대로 반환
       if (data.filename && data.data) {
         return data;
@@ -167,7 +167,7 @@ export class S3Controller {
           return parseInt(timestampB) - parseInt(timestampA);
         });
 
-      res.setHeader('Cache-Control', 'public, max-age=3600');
+      res.setHeader('Cache-Control', 'public, max-age=600');
 
       return {
         date,
